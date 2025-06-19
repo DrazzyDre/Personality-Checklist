@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Checklist Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% include 'base.html' %}
+    <div class="container">
+        <h1>Your Personality Checklist Results</h1>
+        <p>Thank you for completing the checklist! Here are your results:</p>
+        
+        <h2>Your Personality Traits:</h2>
+        <ul>
+            {% for trait in traits %}
+                <li>{{ trait }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Comparison with the 12 Apostles:</h2>
+        <ul>
+            {% for apostle in apostles %}
+                <li>{{ apostle.name }}: {{ apostle.description }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('index') }}">Take the checklist again</a>
+    </div>
+</body>
+</html>

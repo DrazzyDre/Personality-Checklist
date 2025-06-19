@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Checklist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Personality Checklist</h1>
+        <p>Discover which of the 12 Apostles you resonate with!</p>
+    </header>
+    <main>
+        <form action="{{ url_for('submit_checklist') }}" method="POST">
+            <h2>Answer the following questions:</h2>
+            <div>
+                <label for="question1">1. How do you handle conflicts?</label><br>
+                <input type="radio" name="question1" value="calmly"> Calmly<br>
+                <input type="radio" name="question1" value="aggressively"> Aggressively<br>
+                <input type="radio" name="question1" value="avoid"> Avoid<br>
+            </div>
+            <div>
+                <label for="question2">2. What motivates you the most?</label><br>
+                <input type="radio" name="question2" value="helping_others"> Helping others<br>
+                <input type="radio" name="question2" value="personal_success"> Personal success<br>
+                <input type="radio" name="question2" value="team_success"> Team success<br>
+            </div>
+            <div>
+                <label for="question3">3. How do you prefer to make decisions?</label><br>
+                <input type="radio" name="question3" value="analytically"> Analytically<br>
+                <input type="radio" name="question3" value="intuitively"> Intuitively<br>
+                <input type="radio" name="question3" value="collaboratively"> Collaboratively<br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Personality Checklist App</p>
+    </footer>
+</body>
+</html>
