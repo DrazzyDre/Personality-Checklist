@@ -12,31 +12,49 @@
         <p>Discover which of the 12 Apostles you resonate with!</p>
     </header>
     <main>
-        <form action="{{ url_for('submit_checklist') }}" method="POST">
-            <h2>Answer the following questions:</h2>
+        <p>Welcome to the Personality Checklist app! This app will help you explore your personality traits through a series of questions. Based on your answers, we will suggest which of the 12 Apostles you might resonate with the most.</p>
+        <p>Please answer the following questions honestly to get the best results.</p>
+        <form action="{{ url_for('app.index') }}" method="POST">
+            {{ form.hidden_tag() }}
             <div>
-                <label for="question1">1. How do you handle conflicts?</label><br>
-                <input type="radio" name="question1" value="calmly"> Calmly<br>
-                <input type="radio" name="question1" value="aggressively"> Aggressively<br>
-                <input type="radio" name="question1" value="avoid"> Avoid<br>
+                {{ form.name.label }}<br>
+                {{ form.name(size=32) }}
             </div>
             <div>
-                <label for="question2">2. What motivates you the most?</label><br>
-                <input type="radio" name="question2" value="helping_others"> Helping others<br>
-                <input type="radio" name="question2" value="personal_success"> Personal success<br>
-                <input type="radio" name="question2" value="team_success"> Team success<br>
+                {{ form.top_passages.label }}<br>
+                {{ form.top_passages(size=64) }}
             </div>
             <div>
-                <label for="question3">3. How do you prefer to make decisions?</label><br>
-                <input type="radio" name="question3" value="analytically"> Analytically<br>
-                <input type="radio" name="question3" value="intuitively"> Intuitively<br>
-                <input type="radio" name="question3" value="collaboratively"> Collaboratively<br>
+                {{ form.top_characters.label }}<br>
+                {{ form.top_characters(size=64) }}
             </div>
-            <button type="submit">Submit</button>
+            <div>
+                {{ form.encouragement.label }}<br>
+                {{ form.encouragement(size=64) }}
+            </div>
+            <div>
+                {{ form.question1.label }}<br>
+                {{ form.question1() }}
+            </div>
+            <div>
+                {{ form.question2.label }}<br>
+                {{ form.question2() }}
+            </div>
+            <div>
+                {{ form.question3.label }}<br>
+                {{ form.question3() }}
+            </div>
+            <div>
+                {{ form.question4.label }}<br>
+                {{ form.question4() }}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
         </form>
     </main>
     <footer>
-        <p>&copy; 2023 Personality Checklist App</p>
+        <p>&copy; 2025 Personality Checklist App</p>
     </footer>
 </body>
 </html>
