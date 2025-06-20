@@ -4,6 +4,9 @@ from wtforms.validators import DataRequired
 
 class PersonalityChecklistForm(FlaskForm):
     name = StringField('Your Name', validators=[DataRequired()])
+    top_passages = StringField('Top 3 Bible Passages', validators=[DataRequired()])
+    top_characters = StringField('Top 3 Bible Characters', validators=[DataRequired()])
+    encouragement = StringField('Word of Encouragement or Warning', validators=[DataRequired()])
     question1 = RadioField('Do you consider yourself a leader?', choices=[('yes', 'Yes'), ('no', 'No')], validators=[DataRequired()])
     question2 = RadioField('Are you more of a thinker than a doer?', choices=[('yes', 'Yes'), ('no', 'No')], validators=[DataRequired()])
     question3 = RadioField('Do you value community and fellowship?', choices=[('yes', 'Yes'), ('no', 'No')], validators=[DataRequired()])
