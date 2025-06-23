@@ -14,44 +14,20 @@
     <main>
         <p>Welcome to the Personality Checklist app! This app will help you explore your personality traits through a series of questions. Based on your answers, we will suggest which of the 12 Apostles you might resonate with the most.</p>
         <p>Please answer the following questions honestly to get the best results.</p>
+
         <form action="{{ url_for('app.index') }}" method="POST">
             {{ form.hidden_tag() }}
-            <div>
-                {{ form.name.label }}<br>
-                {{ form.name(size=32) }}
-            </div>
-            <div>
-                {{ form.top_passages.label }}<br>
-                {{ form.top_passages(size=64) }}
-            </div>
-            <div>
-                {{ form.top_characters.label }}<br>
-                {{ form.top_characters(size=64) }}
-            </div>
-            <div>
-                {{ form.encouragement.label }}<br>
-                {{ form.encouragement(size=64) }}
-            </div>
-            <div>
-                {{ form.question1.label }}<br>
-                {{ form.question1() }}
-            </div>
-            <div>
-                {{ form.question2.label }}<br>
-                {{ form.question2() }}
-            </div>
-            <div>
-                {{ form.question3.label }}<br>
-                {{ form.question3() }}
-            </div>
-            <div>
-                {{ form.question4.label }}<br>
-                {{ form.question4() }}
-            </div>
+            {% for field in form if field.type != 'CSRFTokenField' and field.type != 'SubmitField' %}
+                <div>
+                    {{ field.label }}<br>
+                    {{ field() }}
+                </div>
+            {% endfor %}
             <div>
                 {{ form.submit() }}
             </div>
         </form>
+
     </main>
     <footer>
         <p>&copy; 2025 Personality Checklist App</p>

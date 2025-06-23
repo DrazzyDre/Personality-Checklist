@@ -14,10 +14,15 @@
         
         <h2>Your Personality Traits:</h2>
         <ul>
-            {% for trait in traits %}
+            {% for trait in user_traits %}
                 <li>{{ trait }}</li>
             {% endfor %}
         </ul>
+
+        <h2>Your Closest Apostle Match:</h2>
+        {% if best_match %}
+            <p><strong>{{ best_match.name }}</strong>: {{ best_match.description }}</p>
+        {% endif %}
 
         <h2>Comparison with the 12 Apostles:</h2>
         <ul>
